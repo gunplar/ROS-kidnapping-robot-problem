@@ -4,5 +4,12 @@ Push and hold the power button on the robot. First time until "Power on" then re
 
 It is best to use Terminator to have 4 terminals. The terminal order below is denoted followed by the command.
 
-* 1st: ssh youbot@youbot
-* 1st: roslaunch youbot_navigation youbot_init.launch
+* 1st: 
+  ssh youbot@youbot
+* 1st: 
+  roslaunch youbot_navigation youbot_init.launch
+* 2nd: roslaunch youbot_navigation static_map_amcl.launch
+
+Run Rviz, a monitoring program for ROS
+
+* 3rd: rosrun rviz rviz
