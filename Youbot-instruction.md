@@ -23,8 +23,10 @@ Install some package:
 sudo apt install python3-wstool catkin python3-catkin-tools python3-rospy
 
 These are the steps to setup the KuKa Youbot workspace like in An's WIFI RSSI localization project but are specific for ROS Noetic.
-1. Create new catkin workspace
-	mkdir -p ~/youbot_ws/src
-	cd ~/youbot_ws/
-	catkin_make
 
+1. For 'navigation' package, instead of cloning from An's Github repo, clone directly from ROS's for more recent versions
+	
+	git clone https://github.com/ros-planning/navigation.git
+2. There is also the option of 'catkin build' and 'catkin\_make' to setup the workspace. If running 'catkin_make' returns missing package, try installing that package with 
+	
+	sudo apt install ros-<distro name>-<package name>
