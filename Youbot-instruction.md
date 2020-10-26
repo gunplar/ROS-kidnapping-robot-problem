@@ -20,12 +20,11 @@ Run Rviz, a monitoring program for ROS
 ###Software
 
 Install some package:
-sudo apt install python3-wstool catkin python3-catkin-tools
+sudo apt install python3-wstool catkin python3-catkin-tools python3-rospy
 
 These are the steps to setup the KuKa Youbot workspace like in An's WIFI RSSI localization project but are specific for ROS Noetic.
 1. Create new catkin workspace
 	mkdir -p ~/youbot_ws/src
 	cd ~/youbot_ws/
 	catkin_make
-2. Install separate catkin_tools from apt (independent from ROS). As of the time of this document this is not available with Noetic.
-	sudo apt install python3-catkin-tools
+
