@@ -25,15 +25,28 @@ These are the steps to setup the KuKa Youbot workspace like in An's WIFI RSSI lo
 
 1. For 'navigation' package, instead of cloning from An's Github repo, clone directly from ROS's for more recent versions
 	
-	git clone https://github.com/ros-planning/navigation.git
+		git clone https://github.com/ros-planning/navigation.git
+	
 2. There is also the option of 'catkin build' and 'catkin\_make' to setup the workspace. If running 'catkin_make' returns missing package, try installing that package with 
 	
-	sudo apt install ros-<distro name>-<package name>
+		sudo apt install ros-<distro name>-<package name>
 
 or
 
-	sudo apt install python3-<package name>
+		sudo apt install python3-<package name>
+
+3. If hector_slam package is still not compatible with Qt version 5.x, install version 4.x with Qt Creator. You might need to install from an old repo.
+
+		sudo add-apt-repository ppa:rock-core/qt4
+		sudo apt update
+		sudo apt install libqt4-dev
+
+Install Qt Creator with:
 	
+		sudo apt install qtcreator
+
+Open Qt creator, navigate to Tools -> Options -> Kits -> Qt Versions -> Add.., then find the qmake-qt4 file usually in /bin or /usr/bin, choose it and apply.
+
 ### IMU BNO055
 1. Add current user to 'dialout' group to allow access to USB port
 
