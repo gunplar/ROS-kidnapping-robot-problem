@@ -20,32 +20,28 @@ Run Rviz, a monitoring program for ROS
 ###Software
 
 Install some package:
-sudo apt install python3-wstool catkin python3-catkin-tools python3-rospy
+		sudo apt install python3-wstool catkin python3-catkin-tools python3-rospy python-is-python3
+
 These are the steps to setup the KuKa Youbot workspace like in An's WIFI RSSI localization project but are specific for ROS Noetic.
 
 1. For 'navigation' package, instead of cloning from An's Github repo, clone directly from ROS's for more recent versions
-	
 		git clone https://github.com/ros-planning/navigation.git
-	
 2. There is also the option of 'catkin build' and 'catkin\_make' to setup the workspace. If running 'catkin_make' returns missing package, try installing that package with 
-	
 		sudo apt install ros-<distro name>-<package name>
-
 or
-
 		sudo apt install python3-<package name>
-
 3. If hector_slam package is still not compatible with Qt version 5.x, install version 4.x with Qt Creator. You might need to install from an old repo.
-
 		sudo add-apt-repository ppa:rock-core/qt4
 		sudo apt update
 		sudo apt install libqt4-dev
-
 Install Qt Creator with:
-	
 		sudo apt install qtcreator
-
 Open Qt creator, navigate to Tools -> Options -> Kits -> Qt Versions -> Add.., then find the qmake-qt4 file usually in /bin or /usr/bin, choose it and apply.
+
+4. If errors like 'ModuleNotFoundError: No module named 'sampling'' pops up, it means that Python library is missing. Install it with:
+		pip3 install <library name>
+Else if the library is already implemented in a local file, check that PYTHONPATH already include the directory containing it. Add to .bashrc:
+		export PYTHONPATH=$PYTHONPATH:<path to directory>
 
 ### IMU BNO055
 1. Add current user to 'dialout' group to allow access to USB port
