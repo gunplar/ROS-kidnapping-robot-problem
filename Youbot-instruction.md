@@ -47,3 +47,6 @@ Else if the library is already implemented in a local file, check that PYTHONPAT
 1. Add current user to 'dialout' group to allow access to USB port
 
 	sudo usermod -a -G dialout <your linux username>
+
+2. Install rviz imu plugin
+		sudo apt install ros-noetic-rviz-imu-plugin
